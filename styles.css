@@ -243,3 +243,22 @@ body {
     font-size: 40px;
     cursor: pointer;
 }
+
+/* ❄ EFECTO DE NIEVE */
+.nieve {
+    position: fixed;
+    top: -20px;
+    color: white;
+    pointer-events: none;
+    animation-name: caer;
+    animation-timing-function: linear;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
