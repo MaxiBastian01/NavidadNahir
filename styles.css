@@ -7,15 +7,15 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #fffdf7; /* blanco cálido */
-    color: #000000;
+    color: #000;
     line-height: 1.6;
 }
 
 /* HERO */
 .hero {
-    background: 
+    background:
         linear-gradient(135deg, rgba(198,40,40,0.75), rgba(46,125,50,0.75)),
-        url("asset/navidad2.jpg");
+        url("asset/navidad.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,21 +43,21 @@ body {
     display: inline-block;
     padding: 10px 24px;
     border-radius: 999px;
-    background-color: #ffffff; /* amarillo muy claro */
+    background-color: #ffffff;
     color: #c62828;
     font-weight: 600;
     text-decoration: none;
-    border: 2px solid #fbc02d; /* amarillo dorado */
+    border: 2px solid #fbc02d; /* dorado */
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
 }
 
 .btn-primario:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    background-color: #002fff;
+    background-color: #fff9c4; /* amarillo suave */
 }
 
-/* SECCIONES */
+/* SECCIONES GENERALES */
 .seccion {
     padding: 40px 20px;
     max-width: 1000px;
@@ -68,13 +68,13 @@ body {
     font-size: 1.9rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #000000;
+    color: #000;
 }
 
 .seccion-clarita {
     background-color: #fff8e1; /* amarillo navideño suave */
     border-top: 1px solid #ffecb3;
-    border-bottom: 1px solid #ffc106;
+    border-bottom: 1px solid #ffecb3;
 }
 
 /* INFO GENERAL */
@@ -85,14 +85,14 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     max-width: 600px;
     margin: 0 auto;
-    border: 2px solid #15ff00; /* marco rojo navideño */
+    border: 2px solid #2e7d32; /* verde navideño */
 }
 
 .info-card p {
     margin-bottom: 8px;
 }
 
-/* CARDS GRID */
+/* GRILLAS DE CARDS */
 .cards-grid {
     display: grid;
     gap: 20px;
@@ -117,51 +117,51 @@ body {
 /* FOTOS INSTRUCTORAS */
 .foto-instructora {
     width: 100%;
-    max-height: 220px;
+    height: 180px;          /* cambiá acá si las querés más altas o bajas */
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 12px;
-    border: 3px solid #3b2dfb; /* marco dorado */
+    border: 3px solid #fbc02d; /* dorado */
 }
 
-/* INSTRUCTORAS TEXTO */
+/* TEXTO INSTRUCTORAS */
+.card-instructora {
+    text-align: center;
+}
+
+.card-instructora p {
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
 .intro,
 .cierre {
     margin-bottom: 15px;
     text-align: center;
 }
 
-/* GALERÍA MÁS GRANDE */
+/* GALERÍA */
 .seccion-galeria {
     background-color: #fff;
 }
 
 .galeria-grid {
     display: grid;
-    gap: 20px;
+    gap: 16px;
     margin-top: 10px;
+    justify-content: center;   /* centra la grilla */
+    justify-items: center;     /* centra cada ítem */
 }
 
-/* Cada recuadro de la galería ahora es más grande */
+/* Cada imagen de la galería (CUADRADA y centrada) */
 .galeria-item {
-    background: linear-gradient(145deg, #ff0000, #00ff0d);
-    border-radius: 14px;
-    height: 240px;      /* 🔥 tamaño compacto ideal */
-    text-align: center;
-    font-weight: 700;
-    color: #15ff00;
-    border: 2px dashed #ff0000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* Cuando después uses <img>, podés aplicar esta clase también */
-.galeria-item img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    aspect-ratio: 1 / 1;       /* cuadrada */
     object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #fbc02d;
+    border-radius: 14px;
+    border: 3px solid #c62828; /* rojo navideño */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .nota-galeria {
@@ -180,7 +180,7 @@ body {
     margin-top: 20px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE ESCRITORIO */
 @media (min-width: 700px) {
     .cards-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -191,52 +191,26 @@ body {
     }
 
     .galeria-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, auto);
     }
 }
 
-
-.card-instructora {
-    display: flex;
-    flex-direction: column;
-    padding: 0; /* Sacamos padding para que la imagen se pegue al borde */
-    overflow: hidden; /* Evita que se salga la imagen */
-}
-
-.foto-instructora {
-    width: 100%;
-    height: 240px;     /* 🔥 Ajustá entre 180 y 260 según te guste */
-    object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid #fbc02d;
-    margin-bottom: 12px;
-}
-
-.card-instructora {
-    text-align: center;          /* 🔥 Centra títulos y texto */
-}
-
-.card-instructora p {
-    text-align: justify;         /* 🔥 Justifica cuerpo del texto */
-    margin: 0 auto;              /* Centra el bloque de texto */
-    max-width: 90%;              /* Reduce lo ancho del texto */
-}
-
-.card-instructora h3 {
-    text-align: center;          /* Centra el título */
-}
-
+/* RESPONSIVE CELU */
 @media (max-width: 600px) {
     .hero {
-        padding: 60px 15px;  /* 🔥 más compacto en celus */
+        padding: 60px 15px;
         background-position: center;
     }
 
     .hero h1 {
-        font-size: 1.8rem;   /* achica el título para que no se corte */
+        font-size: 1.8rem;
     }
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .galeria-item {
+        width: 130px;      /* un poquito más chicas en celu */
     }
 }
