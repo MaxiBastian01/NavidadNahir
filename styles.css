@@ -148,27 +148,26 @@ body {
 
 .galeria-grid {
     display: grid;
-    gap: 16px;
+    gap: 18px;
     margin-top: 10px;
-    justify-content: center;   /* centra la grilla */
-    justify-items: center;     /* centra cada ítem */
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🔥 grilla automática */
 }
 
-/* Cada imagen de la galería (CUADRADA y centrada) */
+/* Imágenes cuadradas más grandes */
 .galeria-item {
-    width: 150px;
-    aspect-ratio: 1 / 1;       /* cuadrada */
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 14px;
-    border: 3px solid #c62828; /* rojo navideño */
+    border: 3px solid #c62828;
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    cursor: pointer;     /* permite click */
+    transition: transform 0.2s ease;
 }
 
-.nota-galeria {
-    font-size: 0.9rem;
-    margin-top: 12px;
-    text-align: center;
-    color: #666;
+.galeria-item:hover {
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -213,4 +212,34 @@ body {
     .galeria-item {
         width: 130px;      /* un poquito más chicas en celu */
     }
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    text-align: center;
+}
+
+.modal-contenido {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #fff;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }

@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+
+
 <body>
+
 
     <header class="hero">
         <div class="hero-content">
@@ -106,10 +109,10 @@
             <h2>Galería de talleres anteriores</h2>
             <div class="galeria-grid">
 
-                <img src="asset/fototalle].jpg" alt="Taller Navidad 1" class="galeria-item">
-                <img src="asset/fototalle]2.jpg" alt="Taller Navidad 2" class="galeria-item">
-                <img src="asset/fototalle]3.jpg" alt="Taller Navidad 3" class="galeria-item">
-                <img src="asset/fototalle].jpg" alt="Taller Navidad 4" class="galeria-item">
+                <img src="asset/FotoTaller1.jpg" alt="Taller Navidad 1" class="galeria-item">
+                <img src="asset/FotoTaller2.jpg" alt="Taller Navidad 2" class="galeria-item">
+                <img src="asset/FotoTaller3.jpg" alt="Taller Navidad 3" class="galeria-item">
+                <img src="asset/FotoTaller4.jpg" alt="Taller Navidad 4" class="galeria-item">
 
             </div>
             <p class="nota-galeria">
@@ -122,7 +125,35 @@
         <p>Taller de Gastronomía Navideña – 2025</p>
     </footer>
 
-    <script src="script.js"></script>
+
+    <!-- Modal Imagen -->
+    <div id="modal" class="modal">
+        <span class="cerrar">&times;</span>
+        <img class="modal-contenido" id="imgModal">
+    </div>
+
+    <script>
+        document.querySelectorAll('.galeria-item').forEach(img => {
+            img.addEventListener('click', function () {
+                let modal = document.getElementById("modal");
+                let modalImg = document.getElementById("imgModal");
+
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        document.querySelector(".cerrar").onclick = function () {
+            document.getElementById("modal").style.display = "none";
+        };
+    </script>
+
+
+
+
 </body>
+
+
+
 
 </html>
