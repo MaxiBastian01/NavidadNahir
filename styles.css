@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #fffdf7; /* blanco cálido */
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+    background: 
+        linear-gradient(135deg, rgba(198,40,40,0.75), rgba(46,125,50,0.75)),
+        url("asset/navidad2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-primario {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background-color: #ffffff; /* amarillo muy claro */
+    color: #c62828;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #fbc02d; /* amarillo dorado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+
+.btn-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    background-color: #002fff;
+}
+
+/* SECCIONES */
+.seccion {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seccion h2 {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.seccion-clarita {
+    background-color: #fff8e1; /* amarillo navideño suave */
+    border-top: 1px solid #ffecb3;
+    border-bottom: 1px solid #ffc106;
+}
+
+/* INFO GENERAL */
+.info-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #15ff00; /* marco rojo navideño */
+}
+
+.info-card p {
+    margin-bottom: 8px;
+}
+
+/* CARDS GRID */
+.cards-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* CRONOGRAMA E INSTRUCTORAS CARDS */
+.card-dia,
+.card-instructora {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.card-dia h3,
+.card-instructora h3 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+/* FOTOS INSTRUCTORAS */
+.foto-instructora {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 3px solid #3b2dfb; /* marco dorado */
+}
+
+/* INSTRUCTORAS TEXTO */
+.intro,
+.cierre {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* GALERÍA MÁS GRANDE */
+.seccion-galeria {
+    background-color: #fff;
+}
+
+.galeria-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Cada recuadro de la galería ahora es más grande */
+.galeria-item {
+    background: linear-gradient(145deg, #ff0000, #00ff0d);
+    border-radius: 14px;
+    height: 240px;      /* 🔥 tamaño compacto ideal */
+    text-align: center;
+    font-weight: 700;
+    color: #15ff00;
+    border: 2px dashed #ff0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Cuando después uses <img>, podés aplicar esta clase también */
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #fbc02d;
+}
+
+.nota-galeria {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    text-align: center;
+    color: #666;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #f3f3f3;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .instructores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+.card-instructora {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Sacamos padding para que la imagen se pegue al borde */
+    overflow: hidden; /* Evita que se salga la imagen */
+}
+
+.foto-instructora {
+    width: 100%;
+    height: 240px;     /* 🔥 Ajustá entre 180 y 260 según te guste */
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #fbc02d;
+    margin-bottom: 12px;
+}
+
+.card-instructora {
+    text-align: center;          /* 🔥 Centra títulos y texto */
+}
+
+.card-instructora p {
+    text-align: justify;         /* 🔥 Justifica cuerpo del texto */
+    margin: 0 auto;              /* Centra el bloque de texto */
+    max-width: 90%;              /* Reduce lo ancho del texto */
+}
+
+.card-instructora h3 {
+    text-align: center;          /* Centra el título */
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 60px 15px;  /* 🔥 más compacto en celus */
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;   /* achica el título para que no se corte */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
