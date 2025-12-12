@@ -150,24 +150,33 @@ body {
     display: grid;
     gap: 18px;
     margin-top: 10px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🔥 grilla automática */
+    justify-content: center;      /* centra la grilla */
+    justify-items: center;        /* centra cada imagen */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 /* Imágenes cuadradas más grandes */
 .galeria-item {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    max-width: 230px;             /* tamaño máximo de cada foto */
+    aspect-ratio: 1 / 1;          /* cuadradas */
     object-fit: cover;
     border-radius: 14px;
     border: 3px solid #c62828;
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    cursor: pointer;     /* permite click */
+    cursor: pointer;
     transition: transform 0.2s ease;
 }
 
 .galeria-item:hover {
     transform: scale(1.05);
+}
+
+/* EN CELULAR: 2 POR FILA Y MÁS GRANDES */
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
 }
 
 /* FOOTER */
@@ -209,9 +218,7 @@ body {
         font-size: 1rem;
     }
 
-    .galeria-item {
-        width: 130px;      /* un poquito más chicas en celu */
-    }
+   
 }
 
 /* MODAL */
