@@ -1,4 +1,4 @@
-# 🎄 Navidad Nahir
+# 🎄 Navidad 
 
 Proyecto web desarrollado como una experiencia visual navideña dedicada a Nahir.
 
