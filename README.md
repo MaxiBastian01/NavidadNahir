@@ -23,29 +23,7 @@ La aplicación consiste en una página interactiva con temática navideña dise�
 
 ---
 
-## 📸 Capturas
-
-### Vista Principal
-
-![Vista Principal](docs/home.png)
-
----
-
-## 🚀 Cómo ejecutar el proyecto
-
-1. Clonar el repositorio:
-
-```bash
-git clone https://github.com/MaxiBastian01/NavidadNahir.git
-```
-
-2. Abrir la carpeta del proyecto.
-
-3. Ejecutar el archivo `index.html` en cualquier navegador web moderno.
-
----
-
-## 📂 Estructura del Proyecto
+## 📂 Estructura 
 
 ```text
 NavidadNahir/
